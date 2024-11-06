@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Doshin Zone</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="images/doshin5.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/doshin5.png" type="image/x-icon" />
   </head>
   <body>
-    <button onclick="addADoshin()">ADD A DOSHIN</button>
-    <div id="container">
-    </div>
+    <button onclick="addADoshin(1)">ADD A DOSHIN</button>
+    <button onclick="addADoshin(10)">ADD 10 DOSHINS</button>
+    <button onclick="addADoshin(100)">ADD 100 DOSHINS</button>
+    <button onclick="addADoshin(1000)">ADD 1000 DOSHINS</button>
+    <button onclick="addADoshin(10000)">ADD 10000 DOSHINS</button>
+
+    <div id="container"></div>
     <script src="script.js"></script>
   </body>
 </html>

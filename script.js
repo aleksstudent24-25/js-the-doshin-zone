@@ -3,11 +3,10 @@ let doshins = 0;
 let cubeSize = 2;
 let prevCubeSize = 1;
 
-function addADoshin() {
-  let randNum = Math.ceil(Math.random() * 5);
+function addADoshin(num) {
   let currentDoshin = 0;
 
-  doshins++;
+  doshins += num;
 
   console.log("-=- NEW LOOP -=-");
   console.log(
@@ -16,12 +15,20 @@ function addADoshin() {
     } doshins!`
   );
 
-  id.innerHTML += `<img class="doshin" src="../images/doshin${randNum}.png" alt=""/>`;
+  id.innerHTML = "";
+  for (let i = 0; i < doshins; i++) {
+    let randNum = Math.ceil(Math.random() * 5);
+    id.innerHTML += `<img class="doshin" src="../images/doshin${randNum}.png" alt=""/>`;
+  }
 
-  if (doshins == cubeSize * cubeSize) {
+  while (doshins >= cubeSize * cubeSize) {
     cubeSize++;
     prevCubeSize++;
   }
+  // if (doshins == cubeSize * cubeSize) {
+  //   cubeSize++;
+  //   prevCubeSize++;
+  // }
 
   let height = prevCubeSize;
   let width = 0;
