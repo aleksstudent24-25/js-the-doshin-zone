@@ -1,0 +1,20 @@
+*{
+  background: linear-gradient(yellow, blue, green);
+  box-sizing: border-box;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow: auto; */
+  height: 80vh;
+  border: 5px black solid;
+}
+
+#container img {
+  min-width: 1%;
+  max-width: 100%;
+  min-height: 1%;
+  max-height: 100%;
+  height: auto;
+}
