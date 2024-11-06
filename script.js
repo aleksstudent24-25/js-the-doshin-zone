@@ -7,17 +7,14 @@ function addADoshin() {
   let randNum = Math.ceil(Math.random() * 5);
   let currentDoshin = 0;
 
-  // let extraPics = 0;
-  // if (prevCubeSize != 1) extraPics = cubeSize * cubeSize - doshins;
-
   doshins++;
 
+  console.log("-=- NEW LOOP -=-");
   console.log(
     `There are ${doshins} doshins and the square is ${
       cubeSize * cubeSize
     } doshins!`
   );
-  // console.log("There are " + extraPics + " extra pics");
 
   id.innerHTML += `<img class="doshin" src="../images/doshin${randNum}.png" alt=""/>`;
 
@@ -28,34 +25,37 @@ function addADoshin() {
 
   let height = prevCubeSize;
   let width = 0;
-  let rowSize = cubeSize;
-  // let row = 1;
+  let rowSize = prevCubeSize;
+  let extras = doshins % rowSize;
+  console.log("There are " + extras + " extras");
 
   document.querySelectorAll(".doshin").forEach((element) => {
     currentDoshin++;
     if (Math.ceil(doshins / height) > rowSize) {
       console.log("Row Pass");
       rowSize++;
+      console.log(`The new rowsize is ${rowSize}`);
     }
 
-    // if(currentDoshin > rowSize * row && ) rowSize;
-
-    // console.log(`THE ROW SIZE IS ${rowSize}`);
-
-    if (doshins % prevCubeSize == 0) {
+    if (doshins % height == 0) {
       console.log("PASS ONE");
-      width = doshins / prevCubeSize;
+      width = doshins / height;
+    } else if (extras > 0) {
+      console.log("PASS TWO");
+      console.log(`Currently there are ${extras} extras`);
+      if (currentDoshin >= rowSize) {
+        console.log("current doshin: " + currentDoshin);
+        extras -= 1;
+        currentDoshin = 0;
+      }
+      width = rowSize;
     } else {
       console.log("PASS THREE");
+      if (extras <= 0 && rowSize >= cubeSize) {
+        rowSize--;
+      }
       width = rowSize;
     }
-
-    // else if (extraPics > 0 && currentDoshin >= rowSize * row) {
-    //   console.log("PASS TWO");
-    //   width = rowSize;
-    //   row++;
-    //   extraPics--;
-    // }
 
     width = element.style.setProperty("width", `${100 / width}%`); //TODO NEEDS CHANGING
     element.style.setProperty("height", `${100 / height}%`); //! DONT CHANGE
