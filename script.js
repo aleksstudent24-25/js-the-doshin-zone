@@ -34,9 +34,8 @@ function addADoshin() {
   document.querySelectorAll(".doshin").forEach((element) => {
     currentDoshin++;
 
-    // if (height * )
-    if(currentDoshin > rowSize * row && ) rowSize;
-    else if (Math.ceil(doshins / height) > rowSize) rowSize++;
+    // if(currentDoshin > rowSize * row && ) rowSize;
+    if (Math.ceil(doshins / height) > rowSize) rowSize++;
 
     console.log(`THE ROW SIZE IS ${rowSize}`);
 
