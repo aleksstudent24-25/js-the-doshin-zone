@@ -25,7 +25,9 @@ function addADoshin() {
 
   let height = prevCubeSize;
   let width = 0;
-  let rowSize = prevCubeSize;
+  let rowSize;
+  if (doshins >= height * cubeSize) rowSize = cubeSize;
+  else rowSize = prevCubeSize;
   let extras = doshins % rowSize;
   console.log("There are " + extras + " extras");
 
