@@ -57,19 +57,6 @@ function addADoshin() {
     //   extraPics--;
     // }
 
-    // else if (extraPics > 0 && currentDoshin > cubeSize * row) {
-    //   width = cubeSize;
-    //   extraPics--;
-    //   row++;
-    // console.log("PASS ONE");
-    // } else if (extraPics > 0) {
-    //   console.log("PASS TWO");
-    //   width = cubeSize;
-    // } else {
-    //   console.log("PASS THREE");
-    //   width = prevCubeSize;
-    // }
-
     width = element.style.setProperty("width", `${100 / width}%`); //TODO NEEDS CHANGING
     element.style.setProperty("height", `${100 / height}%`); //! DONT CHANGE
   });
